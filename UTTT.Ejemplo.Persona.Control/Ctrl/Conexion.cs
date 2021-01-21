@@ -27,9 +27,9 @@ namespace UTTT.Ejemplo.Persona.Control.Ctrl
                 SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-G44JET2\\MSSQLSERVER;Initial Catalog=Manual;User ID=sa;Password=1234");
                 return conexion;
             }
-            catch (Exception _e)
-            { 
-            
+            catch (Exception)
+            {
+
             }
             return null;
         }

@@ -26,11 +26,33 @@ namespace UTTT.Ejemplo.Linq.Data.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("data source=DESKTOP-G44JET2;\ndatabase=Manual;\nIntegrated Security=SSP" +
-            "I;\npersist security info=True;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DBManualVannessa.mssql.somee.com;Initial Catalog=DBManualVannessa;Use" +
+            "r ID=Olguita02_SQLLogin_1;Password=sbotxj8gjb")]
+        public string DBManualVannessaConnectionString {
+            get {
+                return ((string)(this["DBManualVannessaConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("workstation id=DBManualVannessa.mssql.somee.com;packet size=4096;user id=Olguita0" +
+            "2_SQLLogin_1;pwd=sbotxj8gjb;\n            data source=DBManualVannessa.mssql.some" +
+            "e.com;persist security info=False;initial catalog=DBManualVannessa")]
         public string PersonaConnectionString {
             get {
                 return ((string)(this["PersonaConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-G44JET2;Initial Catalog=Manual;User ID=sa;Password=1234")]
+        public string ManualConnectionString {
+            get {
+                return ((string)(this["ManualConnectionString"]));
             }
         }
     }

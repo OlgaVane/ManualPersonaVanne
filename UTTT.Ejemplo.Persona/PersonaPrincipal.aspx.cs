@@ -47,7 +47,8 @@ namespace UTTT.Ejemplo.Persona
             }
             catch (Exception _e)
             {
-                this.showMessage("Ha ocurrido un problema al cargar la página");               
+                this.showMessage("Ha ocurrido un problema al cargar la página");
+                this.showMessageException(_e.Message);
             }
         }
 
@@ -60,6 +61,7 @@ namespace UTTT.Ejemplo.Persona
             catch (Exception _e)
             {
                 this.showMessage("Ha ocurrido un problema al buscar");
+                this.showMessageException(_e.Message);
             }
         }
 
@@ -77,6 +79,7 @@ namespace UTTT.Ejemplo.Persona
             catch (Exception _e)
             {
                 this.showMessage("Ha ocurrido un problema al agregar");
+                this.showMessageException(_e.Message);
             }
         }
 
@@ -136,6 +139,7 @@ namespace UTTT.Ejemplo.Persona
             catch (Exception _e)
             {
                 this.showMessage("Ha ocurrido un problema al seleccionar");
+                this.showMessageException(_e.Message);
             }
         }
 

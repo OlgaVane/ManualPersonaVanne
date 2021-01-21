@@ -79,6 +79,7 @@ namespace UTTT.Ejemplo.Persona
             {
                 this.showMessage("Ha ocurrido un problema al cargar la página");
                 this.Response.Redirect("~/DireccionManager.aspx", false);
+                this.showMessageException(_e.Message);
             }
 
         }
@@ -127,6 +128,7 @@ namespace UTTT.Ejemplo.Persona
             catch (Exception _e)
             {
                 this.showMessage("Ha ocurrido un error inesperado");
+                this.showMessageException(_e.Message);
             }
         }
 

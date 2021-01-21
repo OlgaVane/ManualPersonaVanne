@@ -6,35 +6,36 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\olgav\OneDrive\Escritorio\ServivioTareaEdel</_PublishTargetUrl>
+    <EncryptedPassword />
+    <_PublishTargetUrl>ftp://ManualVannessa.somee.com/www.ManualVannessa.somee.com</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/UTTT.Ejemplo.Linq.Data.dll">
-      <publishTime>01/11/2021 18:00:00</publishTime>
+      <publishTime>01/21/2021 02:43:10</publishTime>
     </File>
     <File Include="bin/UTTT.Ejemplo.Linq.Data.dll.config">
-      <publishTime>01/11/2021 17:59:35</publishTime>
+      <publishTime>01/19/2021 17:59:07</publishTime>
     </File>
     <File Include="bin/UTTT.Ejemplo.Linq.Data.pdb">
-      <publishTime>01/11/2021 18:00:00</publishTime>
+      <publishTime>01/21/2021 02:43:10</publishTime>
     </File>
     <File Include="bin/UTTT.Ejemplo.Persona.Control.dll">
-      <publishTime>01/11/2021 18:00:00</publishTime>
+      <publishTime>01/14/2021 15:14:39</publishTime>
     </File>
     <File Include="bin/UTTT.Ejemplo.Persona.Control.pdb">
-      <publishTime>01/11/2021 18:00:00</publishTime>
+      <publishTime>01/14/2021 15:14:39</publishTime>
     </File>
     <File Include="bin/UTTT.Ejemplo.Persona.Data.dll">
-      <publishTime>01/07/2021 17:57:34</publishTime>
+      <publishTime>01/13/2021 17:28:43</publishTime>
     </File>
     <File Include="bin/UTTT.Ejemplo.Persona.Data.pdb">
-      <publishTime>01/07/2021 17:57:34</publishTime>
+      <publishTime>01/13/2021 17:28:43</publishTime>
     </File>
     <File Include="bin/UTTT.Ejemplo.Persona.dll">
-      <publishTime>01/12/2021 00:40:13</publishTime>
+      <publishTime>01/21/2021 02:45:32</publishTime>
     </File>
     <File Include="bin/UTTT.Ejemplo.Persona.pdb">
-      <publishTime>01/12/2021 00:40:13</publishTime>
+      <publishTime>01/21/2021 02:45:32</publishTime>
     </File>
     <File Include="controlformato.css">
       <publishTime>04/26/2016 13:33:12</publishTime>
@@ -73,7 +74,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>04/26/2016 13:33:12</publishTime>
     </File>
     <File Include="PersonaManager.aspx">
-      <publishTime>04/26/2016 13:33:12</publishTime>
+      <publishTime>01/21/2021 01:25:02</publishTime>
     </File>
     <File Include="PersonaPrincipal.aspx">
       <publishTime>04/26/2016 13:33:12</publishTime>
@@ -88,7 +89,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>04/26/2016 13:33:12</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/12/2021 00:40:17</publishTime>
+      <publishTime>01/13/2021 17:47:46</publishTime>
     </File>
   </ItemGroup>
 </Project>

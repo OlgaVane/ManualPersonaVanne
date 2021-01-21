@@ -46,6 +46,11 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Entity\CatSexo.cs" />
+    <Compile Include="Entity\DcGeneral.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DcGeneral.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Entity\Direccion.cs" />
     <Compile Include="Entity\Persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,6 +62,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Entity\DcGeneral.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DcGeneral.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Entity\DcGeneral.dbml.layout">
+      <DependentUpon>DcGeneral.dbml</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -63,8 +63,8 @@ namespace UTTT.Ejemplo.Persona
                 this.dgvPersona.DataBind();
             }
             catch (Exception _e)
-            { 
-            
+            {
+                this.showMessageException(_e.Message);
             }
         }
 
@@ -98,8 +98,8 @@ namespace UTTT.Ejemplo.Persona
                 }                
             }
             catch (Exception _e)
-            { 
-            
+            {
+                this.showMessageException(_e.Message);
             }
 
         }
@@ -137,7 +137,7 @@ namespace UTTT.Ejemplo.Persona
             }
             catch (Exception _e)
             {
-
+                this.showMessageException(_e.Message);
             }
         }
 
@@ -168,7 +168,7 @@ namespace UTTT.Ejemplo.Persona
             }
             catch (Exception _e)
             {
-
+                this.showMessageException(_e.Message);
             }
         }
 
@@ -195,7 +195,7 @@ namespace UTTT.Ejemplo.Persona
             }
             catch (Exception _e)
             {
-
+                this.showMessageException(_e.Message);
             }
         }
 
@@ -233,8 +233,8 @@ namespace UTTT.Ejemplo.Persona
                }
             }
             catch (Exception _e)
-            { 
-            
+            {
+                this.showMessageException(_e.Message);
             }
         }
 

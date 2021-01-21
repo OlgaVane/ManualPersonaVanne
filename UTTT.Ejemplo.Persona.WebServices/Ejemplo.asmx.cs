@@ -39,7 +39,7 @@ namespace UTTT.Ejemplo.Persona.WebServices
                 dcTemp.Dispose();
                 return true;
             }
-            catch(Exception _e)
+            catch(Exception )
             {
                 return false;
             }
@@ -62,9 +62,10 @@ namespace UTTT.Ejemplo.Persona.WebServices
                 dcTemp.Dispose();
                 return true;
             }
-            catch (Exception _e)
+            catch (Exception)
             {
                 return false;
+                
             }
         }
 
@@ -82,7 +83,7 @@ namespace UTTT.Ejemplo.Persona.WebServices
                 dcTemp.Dispose();
                 return true;
             }
-            catch (Exception _e)
+            catch (Exception )
             {
                 return false;
             }
@@ -119,7 +120,7 @@ namespace UTTT.Ejemplo.Persona.WebServices
                 return tempPersona;
                
             }
-            catch (Exception _e)
+            catch (Exception )
             {
                 return null;
             }
@@ -150,7 +151,7 @@ namespace UTTT.Ejemplo.Persona.WebServices
                 dcTemp.Dispose();
                 return temp;                
             }
-            catch (Exception _e)
+            catch (Exception )
             {
                 return null;
             }            
@@ -176,7 +177,7 @@ namespace UTTT.Ejemplo.Persona.WebServices
                 dcTemp.Dispose();
                 return true;
             }
-            catch (Exception _e)
+            catch (Exception )
             {
                 return false;
             }
@@ -197,7 +198,7 @@ namespace UTTT.Ejemplo.Persona.WebServices
                 dcTemp.Dispose();
                 return true;
             }
-            catch (Exception _e)
+            catch (Exception )
             {
                 return false;
             }
@@ -215,7 +216,7 @@ namespace UTTT.Ejemplo.Persona.WebServices
                 dcTemp.Dispose();
                 return true;
             }
-            catch (Exception _e)
+            catch (Exception )
             {
                 return false;
             }
@@ -248,7 +249,7 @@ namespace UTTT.Ejemplo.Persona.WebServices
                 return tempDireccion;
 
             }
-            catch (Exception _e)
+            catch (Exception )
             {
                 return null;
             }
@@ -270,7 +271,7 @@ namespace UTTT.Ejemplo.Persona.WebServices
                 dcTemp.Dispose();
                 return temp;               
             }
-            catch (Exception _e)
+            catch (Exception )
             {
                 
             }
@@ -303,7 +304,7 @@ namespace UTTT.Ejemplo.Persona.WebServices
                 return tempSexo;
 
             }
-            catch (Exception _e)
+            catch (Exception )
             {
                 return null;
             }
