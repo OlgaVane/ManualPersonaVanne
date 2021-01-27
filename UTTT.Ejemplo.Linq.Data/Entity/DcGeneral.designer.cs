@@ -453,6 +453,12 @@ namespace UTTT.Ejemplo.Linq.Data.Entity
 		
 		private System.Nullable<System.DateTime> _dteFechaNacimiento;
 		
+		private string _strCorreo;
+		
+		private string _strCPostal;
+		
+		private string _strRFC;
+		
 		private EntitySet<Direccion> _Direccion;
 		
 		private EntityRef<CatSexo> _CatSexo;
@@ -475,6 +481,12 @@ namespace UTTT.Ejemplo.Linq.Data.Entity
     partial void OnidCatSexoChanged();
     partial void OndteFechaNacimientoChanging(System.Nullable<System.DateTime> value);
     partial void OndteFechaNacimientoChanged();
+    partial void OnstrCorreoChanging(string value);
+    partial void OnstrCorreoChanged();
+    partial void OnstrCPostalChanging(string value);
+    partial void OnstrCPostalChanged();
+    partial void OnstrRFCChanging(string value);
+    partial void OnstrRFCChanged();
     #endregion
 		
 		public Persona()
@@ -624,6 +636,66 @@ namespace UTTT.Ejemplo.Linq.Data.Entity
 					this._dteFechaNacimiento = value;
 					this.SendPropertyChanged("dteFechaNacimiento");
 					this.OndteFechaNacimientoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_strCorreo", DbType="VarChar(50)")]
+		public string strCorreo
+		{
+			get
+			{
+				return this._strCorreo;
+			}
+			set
+			{
+				if ((this._strCorreo != value))
+				{
+					this.OnstrCorreoChanging(value);
+					this.SendPropertyChanging();
+					this._strCorreo = value;
+					this.SendPropertyChanged("strCorreo");
+					this.OnstrCorreoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_strCPostal", DbType="VarChar(50)")]
+		public string strCPostal
+		{
+			get
+			{
+				return this._strCPostal;
+			}
+			set
+			{
+				if ((this._strCPostal != value))
+				{
+					this.OnstrCPostalChanging(value);
+					this.SendPropertyChanging();
+					this._strCPostal = value;
+					this.SendPropertyChanged("strCPostal");
+					this.OnstrCPostalChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_strRFC", DbType="VarChar(50)")]
+		public string strRFC
+		{
+			get
+			{
+				return this._strRFC;
+			}
+			set
+			{
+				if ((this._strRFC != value))
+				{
+					this.OnstrRFCChanging(value);
+					this.SendPropertyChanging();
+					this._strRFC = value;
+					this.SendPropertyChanged("strRFC");
+					this.OnstrRFCChanged();
 				}
 			}
 		}

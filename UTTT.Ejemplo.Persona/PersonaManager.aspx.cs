@@ -71,6 +71,7 @@ namespace UTTT.Ejemplo.Persona
                     if (this.idPersona == 0)
                     {
                         this.lblAccion.Text = "Agregar";
+                        //DateTime tiempo = new DateTime(2003, 01, 01);
                         DateTime tiempo = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
                         this.dteCalendar.TodaysDate = tiempo;
                         this.dteCalendar.SelectedDate = tiempo;
@@ -90,7 +91,9 @@ namespace UTTT.Ejemplo.Persona
                             this.dteCalendar.TodaysDate = (DateTime)fechaNacimiento;
                             this.dteCalendar.SelectedDate = (DateTime)fechaNacimiento;
                         }
-                        
+                        this.txtCorreo.Text = this.baseEntity.strCorreo;
+                        this.txtCPostal.Text = this.baseEntity.strCPostal;
+                        this.txtRFC.Text = this.baseEntity.strRFC;
                         this.setItem(ref this.ddlSexo, baseEntity.CatSexo.strValor);
                     }                
                 }
@@ -111,6 +114,11 @@ namespace UTTT.Ejemplo.Persona
         {
             try
             {
+                if (!Page.IsValid) 
+                {
+                    return; 
+                }
+
                 DataContext dcGuardar = new DcGeneralDataContext();
                 UTTT.Ejemplo.Linq.Data.Entity.Persona persona = new Linq.Data.Entity.Persona();
                 //si la accion es agregar
@@ -122,11 +130,16 @@ namespace UTTT.Ejemplo.Persona
                     persona.strAPaterno = this.txtAPaterno.Text.Trim();
                     persona.idCatSexo = int.Parse(this.ddlSexo.Text);
                     DateTime fechaNacimiento = this.dteCalendar.SelectedDate.Date;
-                    
+                    persona.strCorreo = this.txtCorreo.Text.Trim();
+                    persona.strCPostal = this.txtCPostal.Text.Trim();
+                    persona.strRFC = this.txtRFC.Text.Trim();
+
+
                     int edadEnDias = ((TimeSpan)(DateTime.Now - fechaNacimiento)).Days;
                     if (edadEnDias >= 6575)//son los dias que tiene que vivir una persona para ser mayor de edad
                     {
-                        persona.dteFechaNacimiento = fechaNacimiento; dcGuardar.GetTable<UTTT.Ejemplo.Linq.Data.Entity.Persona>().InsertOnSubmit(persona);
+                        persona.dteFechaNacimiento = fechaNacimiento; 
+                        dcGuardar.GetTable<UTTT.Ejemplo.Linq.Data.Entity.Persona>().InsertOnSubmit(persona);
                         dcGuardar.SubmitChanges();
                         this.showMessage("El registro se agrego correctamente.");
                         this.Response.Redirect("~/PersonaPrincipal.aspx", false);
@@ -145,9 +158,23 @@ namespace UTTT.Ejemplo.Persona
                     persona.strAMaterno = this.txtAMaterno.Text.Trim();
                     persona.strAPaterno = this.txtAPaterno.Text.Trim();
                     persona.idCatSexo = int.Parse(this.ddlSexo.Text);
-                    dcGuardar.SubmitChanges();
-                    this.showMessage("El registro se edito correctamente.");
-                    this.Response.Redirect("~/PersonaPrincipal.aspx", false);
+                    DateTime fechaNacimiento = this.dteCalendar.SelectedDate.Date;
+                    persona.strCorreo = this.txtCorreo.Text.Trim();
+                    persona.strCPostal = this.txtCPostal.Text.Trim();
+                    persona.strRFC = this.txtRFC.Text.Trim();
+
+                    int edadEnDias = ((TimeSpan)(DateTime.Now - fechaNacimiento)).Days;
+                    if (edadEnDias >= 6575)//son los dias que tiene que vivir una persona para ser mayor de edad
+                    {
+                        persona.dteFechaNacimiento = fechaNacimiento;
+                        dcGuardar.SubmitChanges();
+                        this.showMessage("El registro se edito correctamente.");
+                        this.Response.Redirect("~/PersonaPrincipal.aspx", false);
+                    }
+                    else
+                    {
+                        this.showMessage("Eres menor de edad");
+                    }
                 }
             }
             catch (Exception _e)
