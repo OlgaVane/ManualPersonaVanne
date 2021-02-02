@@ -39,3 +39,12 @@ C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrol
 C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\obj\Release\UTTT.Ejemplo.Persona.csproj.CopyComplete
 C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\obj\Release\UTTT.Ejemplo.Persona.dll
 C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\obj\Release\UTTT.Ejemplo.Persona.pdb
+C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\DotLiquid.dll
+C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\EASendMail.dll
+C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\email.dll
+C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\ServiceStack.Text.dll
+C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\System.Reactive.dll
+C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\email.pdb
+C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\ServiceStack.Text.xml
+C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\System.Reactive.xml
+C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\it\DotLiquid.resources.dll

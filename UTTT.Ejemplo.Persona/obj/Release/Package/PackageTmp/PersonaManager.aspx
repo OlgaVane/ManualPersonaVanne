@@ -5,7 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     
 <head runat="server">
-
+    <link rel="stylesheet" media="all" href="css/EstiloManager.css" />
+    <%--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">--%>
    <script type="text/javascript">
        function validacion() {
 
@@ -62,27 +63,30 @@
            return true;
        }
    </script>
-
+    
     <title></title>
+    
 </head>
 
 <body>
-    <form id="form1" runat="server"   > <%--onsubmit="return validacion()"--%>
-    <div style="font-family: Arial; font-size: medium; font-weight: bold">
-    
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Persona</div>
-
-        <div>
-        
-        </div>
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+    <form class="form-horizontal" id="form1" runat="server" > <%--onsubmit="return validacion()"--%>
+        <fieldset>
+            <legend class="text-center bigicon">Persona</legend>
           <div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <asp:Label ID="lblAccion" runat="server" Text="Accion" Font-Bold="True"></asp:Label>
+             <div class="text-center header"><asp:Label ID="lblAccion" runat="server" Text="Accion" Font-Bold="True" BorderColor="Red"></asp:Label></div>
         
         </div>
         <div>
 
         </div>
+            <div>
+
+            </div>
         <div>
 
         </div>
@@ -111,11 +115,10 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         
             Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<asp:TextBox 
-                MaxLength="50" ID="txtNombre" runat="server" Width="249px" ViewStateMode="Disabled"></asp:TextBox>
+            MaxLength="50" ID="txtNombre" runat="server" Width="249px" ViewStateMode="Disabled"></asp:TextBox>
         
             <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Nombre requerido"></asp:RequiredFieldValidator>
-        
-            <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Su nombre debe tener minimo 3 caracteres y 15 como maximo" ForeColor="Black" ValidationExpression="^[a-zA-Z]{3,15}$"></asp:RegularExpressionValidator>
+            
         
         </div>
         <div> 
@@ -123,6 +126,7 @@
             A Paterno:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox 
                  MaxLength="50" ID="txtAPaterno" runat="server" Width="249px" ViewStateMode="Disabled"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvAPaterno" runat="server" ControlToValidate="txtAPaterno" ErrorMessage="Apellido paterno requerido"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="revAPaterno" runat="server" ControlToValidate="txtAPaterno" ErrorMessage="minimo 3 caracteres y no ingrese simbolos" ForeColor="#000099" ValidationExpression="^[a-zA-Z]{3,15}"></asp:RegularExpressionValidator>
         </div>
         <div>
         
@@ -131,10 +135,21 @@
         
             <asp:RequiredFieldValidator ID="rfvAMaterno" runat="server" ControlToValidate="txtAMaterno" ErrorMessage="Apellido materno requerido"></asp:RequiredFieldValidator>
         
+            <asp:RegularExpressionValidator ID="revAMaterno" runat="server" ControlToValidate="txtAMaterno" ErrorMessage="minimo 3 caracteres y no ingrese simbolos" ForeColor="#000099" ValidationExpression="^[a-zA-Z]{3,15}"></asp:RegularExpressionValidator>
+        
         </div>
     <div> 
     
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha de nacimiento:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Calendar MaxLength="50" ID="dteCalendar" runat="server" OnSelectionChanged="dteCalendar_SelectionChanged" style="margin-left: 215px; margin-top: 0px;"></asp:Calendar>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fecha de nacimiento:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Calendar MaxLength="50" ID="dteCalendar" runat="server" OnSelectionChanged="dteCalendar_SelectionChanged" style="margin-left: 215px; margin-top: 0px;" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+            <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+            <NextPrevStyle VerticalAlign="Bottom" />
+            <OtherMonthDayStyle ForeColor="#808080" />
+            <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+            <SelectorStyle BackColor="#CCCCCC" />
+            <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+            <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+            <WeekendDayStyle BackColor="#FFFFCC" />
+        </asp:Calendar>
     
         
     
@@ -153,7 +168,7 @@
 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
             Código Postal:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-            <asp:TextBox ID="txtCPostal" runat="server" MaxLength="50" ViewStateMode="Disabled" Width="246px"></asp:TextBox>
+            <asp:TextBox ID="txtCPostal" runat="server" MaxLength="5" ViewStateMode="Disabled" Width="246px"></asp:TextBox>
 
             <asp:RegularExpressionValidator ID="revCodigoP" runat="server" ControlToValidate="txtCPostal" ErrorMessage="El codigo postal solo debe tener 5 digitos" ForeColor="#000099" ValidationExpression="^[0-9]{5}$"></asp:RegularExpressionValidator>
 
@@ -163,7 +178,7 @@
         <div>
 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RFC:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox ID="txtRFC" runat="server" MaxLength="50" ViewStateMode="Disabled" Width="246px"></asp:TextBox>
+            <asp:TextBox ID="txtRFC" runat="server" MaxLength="13" ViewStateMode="Disabled" Width="246px"></asp:TextBox>
 
             <asp:RegularExpressionValidator ID="revRFC" runat="server" ControlToValidate="txtRFC" ErrorMessage="El RFC es incorrecto" ForeColor="Black" ValidationExpression="^(([A-Z]|[a-z]|\s){1})(([A-Z]|[a-z]){3})([0-9]{6})((([A-Z]|[a-z]|[0-9]){3}))"></asp:RegularExpressionValidator>
 
@@ -175,12 +190,23 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
      
         <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" 
-            onclick="btnAceptar_Click" ViewStateMode="Disabled" OnClientClick="return validacion();" /> <%--OnClientClick="return validacion();"--%>&nbsp;&nbsp;&nbsp;
+            onclick="btnAceptar_Click" ViewStateMode="Disabled"  /> <%--OnClientClick="return validacion();"--%>&nbsp;&nbsp;&nbsp;
+        
         <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" 
             onclick="btnCancelar_Click" ViewStateMode="Disabled" />
+        
     
     </div>
+
+        
+            <asp:Label ID="lblMensaje" runat="server" ForeColor="Red">...</asp:Label>
+        
+            </fieldset>
     </form>
+                </div>
+            </div>
+        </div>
+        </div>
 </body>
     
 </html>
