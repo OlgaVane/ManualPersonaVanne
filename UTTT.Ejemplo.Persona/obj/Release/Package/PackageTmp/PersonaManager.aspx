@@ -23,6 +23,7 @@
            ValidaCorreo = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;//validacion de correo
            ValidaCodPost = /^([0-9]{5}$)/;
            ValidaRFC = /^[A-Z]{4}[0-9]{6}[A-Z0-9]{3}$/;
+           
 
            if (clavUnic == "" || nombre == "" || apellidoP == "" || apellidoM == "" || fechaNac == "") {
                alert("No deje campos vacios");
@@ -30,6 +31,11 @@
            }
            if (clavUnic.length > 3 || clavUnic.length < 3) {
                alert("La clave debe que tener 3 caracteres");
+               return false;
+           }
+           if (clavUnic < 100 || clavUnic>999)
+           {
+               alert("La clave debe ser un numero entre 100 y 999")
                return false;
            }
            if (isNaN(clavUnic)) {
@@ -105,9 +111,10 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Clave Única:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
             <asp:TextBox MaxLength="3" ID="txtClaveUnica" runat="server" 
                 Width="249px" ViewStateMode="Disabled"></asp:TextBox>  <%--ViewStateMode="Disabled"--%>
+            <asp:RangeValidator ID="rvClaveUnica" runat="server" ControlToValidate="txtClaveUnica" CultureInvariantValues="True" ErrorMessage="La clave debe ser entre 100 y 999" ForeColor="Black" MaximumValue="999" MinimumValue="100" SetFocusOnError="True" Type="Integer"></asp:RangeValidator>
             <asp:RequiredFieldValidator ID="rfvClaveUnica" runat="server" ControlToValidate="txtClaveUnica" ErrorMessage="Clave única requerida"></asp:RequiredFieldValidator>
         
-            <asp:RegularExpressionValidator ID="revClave" runat="server" ControlToValidate="txtClaveUnica" ErrorMessage="La clave solo debe tener 3 numeros" ForeColor="#000099" ValidationExpression="\d{3}"></asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="revClave" runat="server" ControlToValidate="txtClaveUnica" ErrorMessage="La clave debe tener 3 numeros" ForeColor="#000099" ValidationExpression="\d{3}"></asp:RegularExpressionValidator>
         
         </div>
         <div>
@@ -120,13 +127,16 @@
             <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Nombre requerido"></asp:RequiredFieldValidator>
             
         
+            <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="minimo 3 caracteres y no ingrese simbolos o numeros" ForeColor="#000099" ValidationExpression="^[a-z A-Z]{3,50}"></asp:RegularExpressionValidator>
+            
+        
         </div>
         <div> 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
             A Paterno:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox 
                  MaxLength="50" ID="txtAPaterno" runat="server" Width="249px" ViewStateMode="Disabled"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvAPaterno" runat="server" ControlToValidate="txtAPaterno" ErrorMessage="Apellido paterno requerido"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="revAPaterno" runat="server" ControlToValidate="txtAPaterno" ErrorMessage="minimo 3 caracteres y no ingrese simbolos" ForeColor="#000099" ValidationExpression="^[a-zA-Z]{3,15}"></asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="revAPaterno" runat="server" ControlToValidate="txtAPaterno" ErrorMessage="minimo 3 caracteres y no ingrese simbolos o numeros" ForeColor="#000099" ValidationExpression="^[a-z A-Z]{3,50}"></asp:RegularExpressionValidator>
         </div>
         <div>
         
@@ -135,7 +145,7 @@
         
             <asp:RequiredFieldValidator ID="rfvAMaterno" runat="server" ControlToValidate="txtAMaterno" ErrorMessage="Apellido materno requerido"></asp:RequiredFieldValidator>
         
-            <asp:RegularExpressionValidator ID="revAMaterno" runat="server" ControlToValidate="txtAMaterno" ErrorMessage="minimo 3 caracteres y no ingrese simbolos" ForeColor="#000099" ValidationExpression="^[a-zA-Z]{3,15}"></asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="revAMaterno" runat="server" ControlToValidate="txtAMaterno" ErrorMessage="minimo 3 caracteres y no ingrese simbolos o numeros" ForeColor="#000099" ValidationExpression="^[a-z A-Z]{3,50}"></asp:RegularExpressionValidator>
         
         </div>
     <div> 

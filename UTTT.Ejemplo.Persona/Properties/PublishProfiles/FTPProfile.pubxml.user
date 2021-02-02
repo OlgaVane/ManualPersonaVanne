@@ -31,6 +31,12 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="bin/System.Reactive.dll">
       <publishTime>06/05/2013 23:03:24</publishTime>
     </File>
+    <File Include="bin/UTTT.Ejemplo.Linq.Data.dll">
+      <publishTime>02/02/2021 00:06:24</publishTime>
+    </File>
+    <File Include="bin/UTTT.Ejemplo.Linq.Data.dll.config">
+      <publishTime>02/01/2021 18:22:01</publishTime>
+    </File>
     <File Include="bin/UTTT.Ejemplo.Linq.Data.pdb">
       <publishTime>02/02/2021 00:06:24</publishTime>
     </File>
@@ -47,10 +53,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>02/01/2021 00:40:04</publishTime>
     </File>
     <File Include="bin/UTTT.Ejemplo.Persona.dll">
-      <publishTime>02/02/2021 02:26:41</publishTime>
+      <publishTime>02/02/2021 17:16:09</publishTime>
     </File>
     <File Include="bin/UTTT.Ejemplo.Persona.pdb">
-      <publishTime>02/02/2021 02:26:41</publishTime>
+      <publishTime>02/02/2021 17:16:09</publishTime>
     </File>
     <File Include="Content/bootstrap-grid.css">
       <publishTime>02/02/2021 01:11:26</publishTime>
@@ -60,6 +66,15 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     </File>
     <File Include="Content/bootstrap-grid.min.css">
       <publishTime>02/02/2021 01:11:26</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.min.css.map">
+      <publishTime>02/02/2021 01:11:26</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.css">
+      <publishTime>02/02/2021 01:11:25</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.css.map">
+      <publishTime>02/02/2021 01:11:25</publishTime>
     </File>
     <File Include="Content/bootstrap-reboot.min.css">
       <publishTime>02/02/2021 01:11:25</publishTime>
@@ -94,6 +109,12 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="direccion.aspx">
       <publishTime>04/26/2016 13:33:12</publishTime>
     </File>
+    <File Include="DireccionExtraManager.aspx">
+      <publishTime>04/26/2016 13:33:12</publishTime>
+    </File>
+    <File Include="DireccionManager.aspx">
+      <publishTime>04/26/2016 13:33:12</publishTime>
+    </File>
     <File Include="ErrorPage.aspx">
       <publishTime>02/02/2021 01:28:59</publishTime>
     </File>
@@ -119,13 +140,25 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>04/26/2016 13:33:12</publishTime>
     </File>
     <File Include="PersonaManager.aspx">
-      <publishTime>02/02/2021 02:15:17</publishTime>
+      <publishTime>02/02/2021 16:34:32</publishTime>
     </File>
     <File Include="PersonaPrincipal.aspx">
-      <publishTime>02/02/2021 02:26:35</publishTime>
+      <publishTime>02/02/2021 17:13:16</publishTime>
     </File>
     <File Include="Scripts/bootstrap.bundle.js">
       <publishTime>02/02/2021 01:11:24</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.js.map">
+      <publishTime>02/02/2021 01:11:24</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.min.js">
+      <publishTime>02/02/2021 01:11:23</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.min.js.map">
+      <publishTime>02/02/2021 01:11:23</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>02/02/2021 01:11:23</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js.map">
       <publishTime>02/02/2021 01:11:23</publishTime>
@@ -135,6 +168,9 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     </File>
     <File Include="Scripts/bootstrap.min.js.map">
       <publishTime>02/02/2021 01:11:22</publishTime>
+    </File>
+    <File Include="Scripts/esm/popper-utils.js">
+      <publishTime>02/02/2021 01:11:21</publishTime>
     </File>
     <File Include="Scripts/esm/popper-utils.js.map">
       <publishTime>02/02/2021 01:11:21</publishTime>
@@ -181,6 +217,15 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="Scripts/jquery-3.5.1.slim.js">
       <publishTime>02/01/2021 00:34:46</publishTime>
     </File>
+    <File Include="Scripts/jquery-3.5.1.slim.min.js">
+      <publishTime>02/01/2021 00:34:46</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.5.1.slim.min.map">
+      <publishTime>02/01/2021 00:34:46</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>02/01/2021 00:34:32</publishTime>
+    </File>
     <File Include="Scripts/jquery.validate.min.js">
       <publishTime>02/01/2021 00:34:32</publishTime>
     </File>
@@ -211,6 +256,12 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="Scripts/popper.min.js">
       <publishTime>02/02/2021 01:11:16</publishTime>
     </File>
+    <File Include="Scripts/popper.min.js.map">
+      <publishTime>02/02/2021 01:11:16</publishTime>
+    </File>
+    <File Include="Scripts/README.md">
+      <publishTime>02/02/2021 01:11:16</publishTime>
+    </File>
     <File Include="Scripts/src/index.js">
       <publishTime>02/02/2021 01:11:16</publishTime>
     </File>
@@ -221,6 +272,9 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>02/02/2021 01:11:16</publishTime>
     </File>
     <File Include="Scripts/src/methods/disableEventListeners.js">
+      <publishTime>02/02/2021 01:11:15</publishTime>
+    </File>
+    <File Include="Scripts/src/methods/enableEventListeners.js">
       <publishTime>02/02/2021 01:11:15</publishTime>
     </File>
     <File Include="Scripts/src/methods/update.js">
@@ -266,6 +320,9 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>02/02/2021 01:11:13</publishTime>
     </File>
     <File Include="Scripts/src/utils/debounce.js">
+      <publishTime>02/02/2021 01:11:13</publishTime>
+    </File>
+    <File Include="Scripts/src/utils/find.js">
       <publishTime>02/02/2021 01:11:13</publishTime>
     </File>
     <File Include="Scripts/src/utils/findCommonOffsetParent.js">
@@ -322,16 +379,13 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="Scripts/src/utils/getRoot.js">
       <publishTime>02/02/2021 01:11:10</publishTime>
     </File>
+    <File Include="Scripts/src/utils/getRoundedOffsets.js">
+      <publishTime>02/02/2021 01:11:10</publishTime>
+    </File>
     <File Include="Scripts/src/utils/getScroll.js">
       <publishTime>02/02/2021 01:11:10</publishTime>
     </File>
     <File Include="Scripts/src/utils/getScrollParent.js">
-      <publishTime>02/02/2021 01:11:10</publishTime>
-    </File>
-    <File Include="Scripts/src/utils/getStyleComputedProperty.js">
-      <publishTime>02/02/2021 01:11:10</publishTime>
-    </File>
-    <File Include="Scripts/src/utils/getSupportedPropertyName.js">
       <publishTime>02/02/2021 01:11:10</publishTime>
     </File>
     <File Include="Scripts/src/utils/getViewportOffsetRectRelativeToArtbitraryNode.js">

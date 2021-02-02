@@ -62,6 +62,12 @@
                         SortExpression="strAMaterno" />
                     <asp:BoundField DataField="CatSexo" HeaderText="Sexo" 
                         SortExpression="CatSexo" />
+                    <asp:BoundField DataField="dteFechaNacimiento" HeaderText="FNacimiento" ReadOnly="True" 
+                        SortExpression="dteFechaNacimiento" />
+                    <asp:BoundField DataField="strCorreo" HeaderText="Correo" ReadOnly="True" 
+                        SortExpression="strCorreo" />
+                    <asp:BoundField DataField="strCPostal" HeaderText="Codigo Postal" ReadOnly="True" SortExpression="strCPostal" />
+                    <asp:BoundField DataField="strRFC" HeaderText="RFC" ReadOnly="True" SortExpression="strRFC" />
                     <asp:TemplateField HeaderText="Editar">
                         <ItemTemplate>
                                     <asp:ImageButton runat="server" ID="imgEditar" CommandName="Editar" CommandArgument='<%#Bind("id") %>' ImageUrl="~/Images/editrecord_16x16.png" />
@@ -102,7 +108,7 @@
     <asp:LinqDataSource ID="DataSourcePersona" runat="server" 
         ContextTypeName="UTTT.Ejemplo.Linq.Data.Entity.DcGeneralDataContext" 
         onselecting="DataSourcePersona_Selecting" 
-        Select="new (strNombre, strAPaterno, strAMaterno, CatSexo, strClaveUnica,id)" 
+        Select="new (strNombre, strAPaterno, strAMaterno, CatSexo, strClaveUnica,id,dteFechaNacimiento,strCorreo,strCPostal,strRFC)" 
         TableName="Persona" EntityTypeName="">
     </asp:LinqDataSource>
     </form>

@@ -72,8 +72,8 @@ namespace UTTT.Ejemplo.Persona
                     if (this.idPersona == 0)
                     {
                         this.lblAccion.Text = "Agregar";
-                        //DateTime tiempo = new DateTime(2003, 01, 01);
-                        DateTime tiempo = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+                        DateTime tiempo = new DateTime(2003, 01, 01);
+                        //DateTime tiempo = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
                         this.dteCalendar.TodaysDate = tiempo;
                         this.dteCalendar.SelectedDate = tiempo;
 
@@ -309,11 +309,11 @@ namespace UTTT.Ejemplo.Persona
             }
             _control.Items.FindByText(_value).Selected = true;
         }
-       
+
         #endregion
 
         #region Metodos
-        
+
         /// <summary>
         /// Vlida datos basicos
         /// </summary>
@@ -328,7 +328,7 @@ namespace UTTT.Ejemplo.Persona
                 _mensaje = "Seleccione Masculino o Femenino";
                 return false;
             }
-            
+
             //CLAVE UNICA
             int i = 0;
             if (int.TryParse(_persona.strClaveUnica, out i) == false)
@@ -348,9 +348,14 @@ namespace UTTT.Ejemplo.Persona
                 _mensaje = "Nombre está vacío";
                 return false;
             }
-            if (_persona.strNombre.Length <3 || _persona.strNombre.Length>15)
+            if (_persona.strNombre.Length > 50)
             {
                 _mensaje = "Los caracteres permitidos para el nombre rebasan lo establecido de 50";
+                return false;
+            }
+            if (_persona.strNombre.Length < 3)
+            {
+                _mensaje = "Los caracteres permitidos para el nombre no alcanzan lo establecido de 3";
                 return false;
             }
 
@@ -360,9 +365,15 @@ namespace UTTT.Ejemplo.Persona
                 _mensaje = "Apellido paterno vacio";
                 return false;
             }
+
             if (_persona.strAPaterno.Length > 50)
             {
-                _mensaje = "Los caracteres permitidos para nombre rebasan lo establecido de 50";
+                _mensaje = "Los caracteres permitidos para el Apellido paterno rebasan lo establecido de 50";
+                return false;
+            }
+            if (_persona.strNombre.Length < 3)
+            {
+                _mensaje = "Los caracteres permitidos para el Apellido paterno no alcanzan lo establecido de 3";
                 return false;
             }
 
@@ -376,6 +387,10 @@ namespace UTTT.Ejemplo.Persona
             {
                 _mensaje = "Los caracteres permitidos para nombre rebasan lo establecido de 50";
                 return false;
+            }
+            if (_persona.strAMaterno.Length < 3) 
+            {
+                _mensaje = "Los caracteres permitidos para el Apellido materno no alcanzan lo establecido de 3";
             }
             return true;
         }

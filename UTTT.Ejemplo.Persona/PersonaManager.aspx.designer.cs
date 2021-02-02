@@ -60,6 +60,15 @@ namespace UTTT.Ejemplo.Persona
         protected global::System.Web.UI.WebControls.TextBox txtClaveUnica;
 
         /// <summary>
+        /// Control rvClaveUnica.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator rvClaveUnica;
+
+        /// <summary>
         /// Control rfvClaveUnica.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace UTTT.Ejemplo.Persona
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
+
+        /// <summary>
+        /// Control revNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revNombre;
 
         /// <summary>
         /// Control txtAPaterno.
