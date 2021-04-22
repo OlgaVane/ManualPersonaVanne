@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -29,6 +30,8 @@
     <IISExpressUseClassicPipelineMode>true</IISExpressUseClassicPipelineMode>
     <UseGlobalApplicationHostFile />
     <TypeScriptToolsVersion>4.0</TypeScriptToolsVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,6 +41,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -46,8 +50,15 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.50731.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit_.4.1.50731.0\lib\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="CalendarExtenderPlus, Version=1.0.0.36888, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CalendarExtenderPlus.1.0.2.1\lib\CalendarExtenderPlus.dll</HintPath>
+    </Reference>
     <Reference Include="DotLiquid, Version=1.6.1.0, Culture=neutral, PublicKeyToken=82e46016ecf9f07c, processorArchitecture=MSIL">
       <HintPath>..\packages\email.1.1.1\lib\net40\DotLiquid.dll</HintPath>
     </Reference>
@@ -57,40 +68,37 @@
     <Reference Include="email, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\email.1.1.1\lib\net40\email.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="ServiceStack.Text, Version=3.6.8.20237, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\email.1.1.1\lib\net40\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Reactive, Version=1.0.10621.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\email.1.1.1\lib\net40\System.Reactive.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Mobile" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="UTTT.Ejemplo.Linq.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\UTTT.Ejemplo.Linq.Data\bin\Debug\UTTT.Ejemplo.Linq.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="UTTT.Ejemplo.Persona.Control, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\UTTT.Ejemplo.Persona.Control\bin\Debug\UTTT.Ejemplo.Persona.Control.dll</HintPath>
-    </Reference>
-    <Reference Include="UTTT.Ejemplo.Persona.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\UTTT.Ejemplo.Persona.Data\bin\Debug\UTTT.Ejemplo.Persona.Data.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -99,21 +107,84 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Js\jquery-3.4.1.min.js" />
     <Content Include="controlformato.css" />
     <Content Include="css\EstiloManager.css" />
+    <Content Include="css\estilos.css" />
+    <Content Include="css\login.css" />
     <Content Include="Default.aspx" />
     <Content Include="direccion.aspx" />
     <Content Include="DireccionExtraManager.aspx" />
     <Content Include="DireccionManager.aspx" />
     <Content Include="ErrorPage.aspx" />
+    <Content Include="Images\Calendario.png" />
     <Content Include="Images\delrecord_16x16.png" />
+    <Content Include="Images\edit.ico" />
     <Content Include="Images\editrecord_16x16.png" />
+    <Content Include="Images\persona.png" />
     <Content Include="Images\Pixir-1-1-300x181.png" />
     <Content Include="Images\printrecord_16x16.png" />
+    <Content Include="Images\Usuario.png" />
     <Content Include="javaScripFile.js" />
     <Content Include="javaScripPage.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="Logincss\css\main.css" />
+    <Content Include="Logincss\css\util.css" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Logincss\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="Logincss\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="Logincss\images\bg-01.jpg" />
+    <Content Include="Logincss\images\icons\favicon.ico" />
+    <Content Include="Logincss\images\icons\map-marker.png" />
+    <Content Include="Logincss\js\main.js" />
+    <Content Include="Logincss\js\map-custom.js" />
+    <Content Include="Logincss\vendor\animate\animate.css" />
+    <Content Include="Logincss\vendor\animsition\css\animsition.css" />
+    <Content Include="Logincss\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Logincss\vendor\animsition\js\animsition.js" />
+    <Content Include="Logincss\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Logincss\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Logincss\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Logincss\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Logincss\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Logincss\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Logincss\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Logincss\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Logincss\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Logincss\vendor\bootstrap\js\popper.js" />
+    <Content Include="Logincss\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Logincss\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Logincss\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Logincss\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Logincss\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Logincss\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Logincss\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Logincss\vendor\daterangepicker\moment.js" />
+    <Content Include="Logincss\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Logincss\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Logincss\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Logincss\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Logincss\vendor\select2\select2.css" />
+    <Content Include="Logincss\vendor\select2\select2.js" />
+    <Content Include="Logincss\vendor\select2\select2.min.css" />
+    <Content Include="Logincss\vendor\select2\select2.min.js" />
+    <Content Include="Modelo\DCPersona.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DCPersona.edmx</DependentUpon>
+      <LastGenOutput>DCPersona.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Modelo\DCPersona.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DCPersona.edmx</DependentUpon>
+      <LastGenOutput>DCPersona.cs</LastGenOutput>
+    </Content>
     <Content Include="PersonaManager.aspx" />
     <Content Include="PersonaPrincipal.aspx" />
+    <Content Include="Recuperacion.aspx" />
+    <Content Include="RecuperarCorreo.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -140,6 +211,75 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Inicio.aspx" />
+    <EntityDeploy Include="Modelo\DCPersona.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DCPersona.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Modelo\DCPersona.edmx.diagram">
+      <DependentUpon>DCPersona.edmx</DependentUpon>
+    </Content>
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Logincss\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Logincss\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="Logincss\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="Logincss\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="Logincss\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="Logincss\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Logincss\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Logincss\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Logincss\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Logincss\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Logincss\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Logincss\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Logincss\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Logincss\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Logincss\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Logincss\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Logincss\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Logincss\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Logincss\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Logincss\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Logincss\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Logincss\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Logincss\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Logincss\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Logincss\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Logincss\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Logincss\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Logincss\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Logincss\vendor\bootstrap\css\bootstrap.min.css.map" />
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
@@ -225,6 +365,8 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="UsuarioManager.aspx" />
+    <Content Include="UsuarioPrincipal.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -274,6 +416,7 @@
     <Compile Include="DireccionManager.aspx.designer.cs">
       <DependentUpon>DireccionManager.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Encrypt.cs" />
     <Compile Include="ErrorPage.aspx.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -287,6 +430,48 @@
     </Compile>
     <Compile Include="javaScripPage.aspx.designer.cs">
       <DependentUpon>javaScripPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\CatEstadoCivil.cs">
+      <DependentUpon>DCPersona.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\CatEstadoUser.cs">
+      <DependentUpon>DCPersona.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\CatSexo.cs">
+      <DependentUpon>DCPersona.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\ClsLogin.cs" />
+    <Compile Include="Modelo\ClsSesiones.cs" />
+    <Compile Include="Modelo\DCPersona.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DCPersona.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\DCPersona.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DCPersona.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\DCPersona.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DCPersona.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Direccion.cs">
+      <DependentUpon>DCPersona.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Persona.cs">
+      <DependentUpon>DCPersona.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Usuario.cs">
+      <DependentUpon>DCPersona.tt</DependentUpon>
     </Compile>
     <Compile Include="paginaMaster.Master.cs">
       <DependentUpon>paginaMaster.Master</DependentUpon>
@@ -310,6 +495,41 @@
       <DependentUpon>PersonaPrincipal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Recuperacion.aspx.cs">
+      <DependentUpon>Recuperacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Recuperacion.aspx.designer.cs">
+      <DependentUpon>Recuperacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecuperarCorreo.aspx.cs">
+      <DependentUpon>RecuperarCorreo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecuperarCorreo.aspx.designer.cs">
+      <DependentUpon>RecuperarCorreo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioManager.aspx.cs">
+      <DependentUpon>UsuarioManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsuarioManager.aspx.designer.cs">
+      <DependentUpon>UsuarioManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsuarioPrincipal.aspx.cs">
+      <DependentUpon>UsuarioPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsuarioPrincipal.aspx.designer.cs">
+      <DependentUpon>UsuarioPrincipal.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -325,6 +545,21 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UTTT.Ejemplo.Linq.Data\UTTT.Ejemplo.Linq.Data.csproj">
+      <Project>{96e7f921-1276-464b-8750-20d84a179b27}</Project>
+      <Name>UTTT.Ejemplo.Linq.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UTTT.Ejemplo.Persona.Control\UTTT.Ejemplo.Persona.Control.csproj">
+      <Project>{c354bdcd-2821-467a-9104-a08a803b414f}</Project>
+      <Name>UTTT.Ejemplo.Persona.Control</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UTTT.Ejemplo.Persona.Data\UTTT.Ejemplo.Persona.Data.csproj">
+      <Project>{10213a66-aff1-433d-bc09-b5c76b3a339a}</Project>
+      <Name>UTTT.Ejemplo.Persona.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -353,6 +588,14 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

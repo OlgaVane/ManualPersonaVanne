@@ -10,15 +10,6 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=DBManualVannessa.mssql.somee.com;Initial Catalog=DBManualVannessa;User ID=Olguita02_SQLLogin_1;Password=sbotxj8gjb</Value>
     </Setting>
-    <Setting Name="PersonaConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;workstation id=DBManualVannessa.mssql.somee.com;packet size=4096;user id=Olguita02_SQLLogin_1;pwd=sbotxj8gjb;
-            data source=DBManualVannessa.mssql.somee.com;persist security info=False;initial catalog=DBManualVannessa&lt;/ConnectionString&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">workstation id=DBManualVannessa.mssql.somee.com;packet size=4096;user id=Olguita02_SQLLogin_1;pwd=sbotxj8gjb;
-            data source=DBManualVannessa.mssql.somee.com;persist security info=False;initial catalog=DBManualVannessa</Value>
-    </Setting>
     <Setting Name="ManualConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
@@ -26,6 +17,25 @@
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=DESKTOP-G44JET2;Initial Catalog=Manual;User ID=sa;Password=1234</Value>
+    </Setting>
+    <Setting Name="PersonaConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;workstation id=DBManualVannessa.mssql.somee.com;packet size=4096;user id=Olguita02_SQLLogin_1;pwd=sbotxj8gjb;
+
+            data source=DBManualVannessa.mssql.somee.com;persist security info=False;initial catalog=DBManualVannessa&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">workstation id=DBManualVannessa.mssql.somee.com;packet size=4096;user id=Olguita02_SQLLogin_1;pwd=sbotxj8gjb;
+
+            data source=DBManualVannessa.mssql.somee.com;persist security info=False;initial catalog=DBManualVannessa</Value>
+    </Setting>
+    <Setting Name="DBManualOlgaConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DBManualOlga.mssql.somee.com;Initial Catalog=DBManualOlga;User ID=Olga01_SQLLogin_1;Password=w82ifs3vdo&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DBManualOlga.mssql.somee.com;Initial Catalog=DBManualOlga;User ID=Olga01_SQLLogin_1;Password=w82ifs3vdo</Value>
     </Setting>
   </Settings>
 </SettingsFile>

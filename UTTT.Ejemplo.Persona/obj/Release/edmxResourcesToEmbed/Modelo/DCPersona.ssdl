@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBManualVannessaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CatEstadoCivil">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="strValor" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="strDescripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CatEstadoUser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="strValor" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="strDescripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CatSexo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strValor" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="strDescripcion" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Direccion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idPersona" Type="int" Nullable="false" />
+    <Property Name="strCalle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="strNumero" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="strColonia" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Persona">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="strClaveUnica" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="strNombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="strAPaterno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="strAMaterno" Type="varchar" MaxLength="50" />
+    <Property Name="idCatSexo" Type="int" Nullable="false" />
+    <Property Name="strCorreo" Type="varchar" MaxLength="50" />
+    <Property Name="strCPostal" Type="varchar" MaxLength="50" />
+    <Property Name="strRFC" Type="varchar" MaxLength="50" />
+    <Property Name="idCadEstadoCivil" Type="int" />
+    <Property Name="dteFechaNacimiento" Type="date" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idComPersona" Type="int" Nullable="false" />
+    <Property Name="strNombreUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="strContraseña" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idCatEstadoUser" Type="int" Nullable="false" />
+    <Property Name="dteFechaRegistro" Type="date" Nullable="false" />
+    <Property Name="token" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_Direccion_Persona">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="Direccion" Type="Self.Direccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Direccion">
+        <PropertyRef Name="idPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Persona_CatEstadoCivil">
+    <End Role="CatEstadoCivil" Type="Self.CatEstadoCivil" Multiplicity="0..1" />
+    <End Role="Persona" Type="Self.Persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatEstadoCivil">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="idCadEstadoCivil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Persona_CatSexo">
+    <End Role="CatSexo" Type="Self.CatSexo" Multiplicity="1" />
+    <End Role="Persona" Type="Self.Persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatSexo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="idCatSexo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_CatEstadoUser">
+    <End Role="CatEstadoUser" Type="Self.CatEstadoUser" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CatEstadoUser">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="idCatEstadoUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Persona">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="idComPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBManualVannessaModelStoreContainer">
+    <EntitySet Name="CatEstadoCivil" EntityType="Self.CatEstadoCivil" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CatEstadoUser" EntityType="Self.CatEstadoUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CatSexo" EntityType="Self.CatSexo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Direccion" EntityType="Self.Direccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Persona" EntityType="Self.Persona" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Direccion_Persona" Association="Self.FK_Direccion_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Direccion" EntitySet="Direccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Persona_CatEstadoCivil" Association="Self.FK_Persona_CatEstadoCivil">
+      <End Role="CatEstadoCivil" EntitySet="CatEstadoCivil" />
+      <End Role="Persona" EntitySet="Persona" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Persona_CatSexo" Association="Self.FK_Persona_CatSexo">
+      <End Role="CatSexo" EntitySet="CatSexo" />
+      <End Role="Persona" EntitySet="Persona" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_CatEstadoUser" Association="Self.FK_Usuario_CatEstadoUser">
+      <End Role="CatEstadoUser" EntitySet="CatEstadoUser" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Persona" Association="Self.FK_Usuario_Persona">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

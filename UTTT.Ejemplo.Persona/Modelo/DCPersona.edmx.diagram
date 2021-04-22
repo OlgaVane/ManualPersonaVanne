@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a21448829a414996b8f8ab00562ec93e" Name="Diagram1">
+        <EntityTypeShape EntityType="DBManualVannessaModel.CatEstadoCivil" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBManualVannessaModel.CatEstadoUser" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBManualVannessaModel.CatSexo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBManualVannessaModel.Direccion" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBManualVannessaModel.Persona" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBManualVannessaModel.Usuario" Width="1.5" PointX="8.25" PointY="3.25" IsExpanded="true" />
+        <AssociationConnector Association="DBManualVannessaModel.FK_Persona_CatEstadoCivil" ManuallyRouted="false" />
+        <AssociationConnector Association="DBManualVannessaModel.FK_Usuario_CatEstadoUser" ManuallyRouted="false" />
+        <AssociationConnector Association="DBManualVannessaModel.FK_Persona_CatSexo" ManuallyRouted="false" />
+        <AssociationConnector Association="DBManualVannessaModel.FK_Direccion_Persona" ManuallyRouted="false" />
+        <AssociationConnector Association="DBManualVannessaModel.FK_Usuario_Persona" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

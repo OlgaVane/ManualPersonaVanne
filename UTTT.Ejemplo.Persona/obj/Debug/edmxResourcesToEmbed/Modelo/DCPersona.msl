@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBManualVannessaModelStoreContainer" CdmEntityContainer="DBManualVannessaEntities1">
+    <EntitySetMapping Name="CatEstadoCivil">
+      <EntityTypeMapping TypeName="DBManualVannessaModel.CatEstadoCivil">
+        <MappingFragment StoreEntitySet="CatEstadoCivil">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="strValor" ColumnName="strValor" />
+          <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatEstadoUser">
+      <EntityTypeMapping TypeName="DBManualVannessaModel.CatEstadoUser">
+        <MappingFragment StoreEntitySet="CatEstadoUser">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="strValor" ColumnName="strValor" />
+          <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatSexo">
+      <EntityTypeMapping TypeName="DBManualVannessaModel.CatSexo">
+        <MappingFragment StoreEntitySet="CatSexo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="strValor" ColumnName="strValor" />
+          <ScalarProperty Name="strDescripcion" ColumnName="strDescripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Direccion">
+      <EntityTypeMapping TypeName="DBManualVannessaModel.Direccion">
+        <MappingFragment StoreEntitySet="Direccion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idPersona" ColumnName="idPersona" />
+          <ScalarProperty Name="strCalle" ColumnName="strCalle" />
+          <ScalarProperty Name="strNumero" ColumnName="strNumero" />
+          <ScalarProperty Name="strColonia" ColumnName="strColonia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Persona">
+      <EntityTypeMapping TypeName="DBManualVannessaModel.Persona">
+        <MappingFragment StoreEntitySet="Persona">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="strClaveUnica" ColumnName="strClaveUnica" />
+          <ScalarProperty Name="strNombre" ColumnName="strNombre" />
+          <ScalarProperty Name="strAPaterno" ColumnName="strAPaterno" />
+          <ScalarProperty Name="strAMaterno" ColumnName="strAMaterno" />
+          <ScalarProperty Name="idCatSexo" ColumnName="idCatSexo" />
+          <ScalarProperty Name="strCorreo" ColumnName="strCorreo" />
+          <ScalarProperty Name="strCPostal" ColumnName="strCPostal" />
+          <ScalarProperty Name="strRFC" ColumnName="strRFC" />
+          <ScalarProperty Name="idCadEstadoCivil" ColumnName="idCadEstadoCivil" />
+          <ScalarProperty Name="dteFechaNacimiento" ColumnName="dteFechaNacimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="DBManualVannessaModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idComPersona" ColumnName="idComPersona" />
+          <ScalarProperty Name="strNombreUsuario" ColumnName="strNombreUsuario" />
+          <ScalarProperty Name="strContraseña" ColumnName="strContraseña" />
+          <ScalarProperty Name="idCatEstadoUser" ColumnName="idCatEstadoUser" />
+          <ScalarProperty Name="dteFechaRegistro" ColumnName="dteFechaRegistro" />
+          <ScalarProperty Name="token" ColumnName="token" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

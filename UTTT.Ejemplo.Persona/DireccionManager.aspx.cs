@@ -33,6 +33,8 @@ namespace UTTT.Ejemplo.Persona
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["strNombreUsuario"] == null)
+                Response.Redirect("login.aspx");
             try
             {
                 Response.Buffer = true;

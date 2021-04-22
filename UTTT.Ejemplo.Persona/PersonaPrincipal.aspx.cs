@@ -29,6 +29,8 @@ namespace UTTT.Ejemplo.Persona
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["strNombreUsuario"] == null)
+                Response.Redirect("login.aspx");
             try
             {
                 Response.Buffer = true;
@@ -45,6 +47,16 @@ namespace UTTT.Ejemplo.Persona
                     this.ddlSexo.DataSource = lista;
                     this.ddlSexo.DataBind();
                     //String mensaje = String.Empty;
+
+                    List<CatEstadoCivil> listaCatEstadoCivil = dcTemp.GetTable<CatEstadoCivil>().ToList();
+                    CatEstadoCivil TempCatEstadoCivil = new CatEstadoCivil();
+                    TempCatEstadoCivil.id = -1;
+                    TempCatEstadoCivil.strValor = "Todos";
+                    listaCatEstadoCivil.Insert(0, TempCatEstadoCivil);
+                    this.ddlEstadocivilPrincipal.DataTextField = "strValor";
+                    this.ddlEstadocivilPrincipal.DataValueField = "id";
+                    this.ddlEstadocivilPrincipal.DataSource = listaCatEstadoCivil;
+                    this.ddlEstadocivilPrincipal.DataBind();
                 }
             }
             catch (Exception _e)
@@ -60,6 +72,7 @@ namespace UTTT.Ejemplo.Persona
                 this.EnviarCorreo("olgavanessasanchezcruz27@gmail.com", "Exception", mensaje);
             }
         }
+        
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -90,7 +103,9 @@ namespace UTTT.Ejemplo.Persona
                 parametrosRagion.Add("idPersona", "0");
                 this.session.Parametros = parametrosRagion;
                 this.Session["SessionManager"] = this.session;
-                this.Response.Redirect(this.session.Pantalla, false);               
+                this.Response.Redirect(this.session.Pantalla, false);
+                
+               
             }
             catch (Exception _e)
             {
@@ -106,6 +121,8 @@ namespace UTTT.Ejemplo.Persona
             }
         }
 
+        
+
         protected void DataSourcePersona_Selecting(object sender, LinqDataSourceSelectEventArgs e)
         {
             try
@@ -113,6 +130,7 @@ namespace UTTT.Ejemplo.Persona
                 DataContext dcConsulta = new DcGeneralDataContext();
                 bool nombreBool = false;
                 bool sexoBool = false;
+                bool estadoCivil = false;
                 if (!this.txtNombre.Text.Equals(String.Empty))
                 {
                     nombreBool = true;
@@ -121,13 +139,25 @@ namespace UTTT.Ejemplo.Persona
                 {
                     sexoBool = true;
                 }
+                if (this.ddlEstadocivilPrincipal.Text != "-1")
+                {
+                    estadoCivil = true;
+                }
 
-                Expression<Func<UTTT.Ejemplo.Linq.Data.Entity.Persona, bool>> 
+                Expression<Func<UTTT.Ejemplo.Linq.Data.Entity.Persona, bool>>
                     predicate =
                     (c =>
-                    ((sexoBool) ? c.idCatSexo == int.Parse(this.ddlSexo.Text) : true) &&             
+                    ((sexoBool) ? c.idCatSexo == int.Parse(this.ddlSexo.Text) : true) &&
+                    ((estadoCivil) ? c.idCadEstadoCivil == int.Parse(this.ddlEstadocivilPrincipal.Text) : true) &&
                     ((nombreBool) ? (((nombreBool) ? c.strNombre.Contains(this.txtNombre.Text.Trim()) : false)) : true)
                     );
+
+                //Expression<Func<UTTT.Ejemplo.Linq.Data.Entity.Persona, bool>> 
+                //    predicate =
+                //    (c =>
+                //    ((sexoBool) ? c.idCatSexo == int.Parse(this.ddlSexo.Text) : true) &&             
+                //    ((nombreBool) ? (((nombreBool) ? c.strNombre.Contains(this.txtNombre.Text.Trim()) : false)) : true)
+                //    );
 
                 predicate.Compile();
 
@@ -143,7 +173,6 @@ namespace UTTT.Ejemplo.Persona
                     mensaje = mensaje + " Inner exception: " + _e.InnerException.Message;
                 }
                 mensaje = mensaje + " Stack trace: " + _e.StackTrace;
-                this.Response.Redirect("~/PageError.aspx", false);
 
                 this.EnviarCorreo("olgavanessasanchezcruz27@gmail.com", "Exception", mensaje);
             }
@@ -300,6 +329,25 @@ namespace UTTT.Ejemplo.Persona
         protected void dgvPersonas_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Response.Redirect("~/PersonaPrincipal.aspx", false);
+            }
+            catch (Exception _e)
+            {
+                this.showMessage("Ha ocurrido un error inesperado");
+                this.showMessageException(_e.Message);
+
+            }
+        }
+
+        protected void txtNombre_TextChanged1(object sender, EventArgs e)
+        {
+           //ScriptManager.RegisterClientScriptBlock(UpdatePanelBusca, this.GetType(), "", "alert('" + txtNombre.Text + "')", true);
         }
     }
 }

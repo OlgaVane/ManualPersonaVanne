@@ -48,6 +48,12 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.50731.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit_.4.1.50731.0\lib\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="CalendarExtenderPlus, Version=1.0.0.36888, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CalendarExtenderPlus.1.0.2.1\lib\CalendarExtenderPlus.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -93,6 +99,9 @@
       <Project>{10213A66-AFF1-433D-BC09-B5C76B3A339A}</Project>
       <Name>UTTT.Ejemplo.Persona.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

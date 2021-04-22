@@ -48,3 +48,9 @@ C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrol
 C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\ServiceStack.Text.xml
 C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\System.Reactive.xml
 C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\it\DotLiquid.resources.dll
+C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\AjaxControlToolkit.dll
+C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\CalendarExtenderPlus.dll
+C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\EntityFramework.dll
+C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\EntityFramework.SqlServer.dll
+C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\EntityFramework.xml
+C:\Users\olgav\OneDrive\Documentos\uttt\8-G3\Desarrollo web profesional\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona\bin\EntityFramework.SqlServer.xml
